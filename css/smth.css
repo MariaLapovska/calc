@@ -1,0 +1,136 @@
+.no-left-pad {
+    padding-left: 0;
+}
+
+.no-right-pad {
+    padding-right: 0; 
+}
+
+.well {
+    background: #ffffff;
+}
+
+.panel-purple {
+    border-color: #6f5499;
+}
+
+.panel-purple.panel-heading {
+    border-color: #6f5499;
+}
+
+.panel-purple.panel-body {
+    border-color: #6f5499;
+}
+
+.panel-group .panel {
+        border-radius: 0;
+        box-shadow: none;
+        border-color: #EEEEEE;
+    }
+
+    .panel-default > .panel-heading {
+        padding: 0;
+        border-radius: 0;
+        color: #212121;
+        background-color: #FAFAFA;
+        border-color: #EEEEEE;
+    }
+
+    .panel-title {
+        font-size: 14px;
+    }
+
+    .panel-title > a {
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+    }
+
+    .more-less {
+        float: right;
+        color: #212121;
+    }
+
+    .panel-default > .panel-heading + .panel-collapse > .panel-body {
+        border-top-color: #EEEEEE;
+    }
+
+.alert-purple {
+    color: #6f5499;
+    background: #e1daeb;
+    border-color: #ccc1dd;
+}
+
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+
+.bs-callout-purple {
+    border-left-color: #6f5499;
+}
+
+.bs-callout h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.bs-callout-purple h3 {
+    color: #6f5499;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus {
+    color: #ffffff;
+    background: #6f5499;
+}
+
+.nav-pills > li.active > a:hover {
+    color: #ffffff;
+    background: #58437a;
+}
+
+.btn-purple {
+  background: #6f5499;
+  border-color: #6f5499;
+  color: #ffffff;
+}
+
+.btn-purple:hover,
+.btn-purple:focus {
+  background-color: #58437a;
+  border-color: #58437a;
+  color: #ffffff;
+}
+
+.btn-purple:active,
+.btn-purple.active {
+  background-color: #463561;
+  border-color: #463561;
+  color: #ffffff;
+}
+
+.btn-purple.disabled:hover,
+.btn-purple.disabled:focus,
+.btn-purple.disabled:active,
+.btn-purple.disabled.active,
+.btn-purple[disabled]:hover,
+.btn-purple[disabled]:focus,
+.btn-purple[disabled]:active,
+.btn-purple[disabled].active,
+fieldset[disabled] .btn-purple:hover,
+fieldset[disabled] .btn-purple:focus,
+fieldset[disabled] .btn-purple:active,
+fieldset[disabled] .btn-purple.active {
+  background-color: #ccc1dd;
+  border-color: #ccc1dd;
+  color: #ffffff;
+}
+
+.flat-input, .flat-input:focus {
+    border-color: #6f5499;
+    box-shadow: none;
+    outline: none;
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>Cost Constructive Calculator</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/custom.css"/>
+</head>
+<body>
+
+	<!-- Menu -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="main.html">Cost Constructive Calculator</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#home"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="calculate.html"><i class="fa fa-calculator" aria-hidden="true"></i> Calculator</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-info-circle" aria-hidden="true"></i> About
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">What is</li>
+                            <li><a href="about.html#cocomo">Constructive Cost Model</a></li>
+                            <li><a href="about.html#basic">Basic COCOMO</a></li>
+                            <li><a href="about.html#intermediate">Intermediate COCOMO</a></li>
+                            <li><a href="about.html#detailed">Detailed COCOMO</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+	<!-- End menu -->
+
+	<!-- Banner -->
+	<div class="jumbotron" id="home">
+		<div class="container text-center">
+			<h1>Cost Constructive Calculator</h1>       
+			<p>Software cost estimation has never been easier!</p>
+            <hr/>
+            <a href="calculate.html" class="btn btn-default btn-lg" role="button">Calculate</a>
+		</div>
+	</div>
+	<!-- End banner -->
+
+    <!-- Container -->
+    <div class="container">
+    	<div class="row">
+            <div class="col-md-3 col-xs-6">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <span class="fa-stack fa-5x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-rocket fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="panel-body icons">
+                        <h4>Fast</h4>
+                        <p>This is a fast way to estimate material and human resources needed for your project.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <span class="fa-stack fa-5x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-usd fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="panel-body icons">
+                        <h4>Efficient</h4>
+                        <p>Helps you to distribute project funds just right.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <span class="fa-stack fa-5x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-bullseye fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="panel-body icons">
+                        <h4>Precise</h4>
+                        <p>Has two levels of precision: basic and intermediate, that considers additional project factors.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <span class="fa-stack fa-5x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-briefcase fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="panel-body icons">
+                        <h4>Practical</h4>
+                        <p>Perfect solution for variety of IT-businesses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End container -->
+
+    <div class="container-fluid dark-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-responsive" src="images/calculator.jpg" alt="Cost Constructive Calculator">
+                </div>
+                <div class="col-md-6">
+                    <h3>What is COCOMO?</h3>
+                    <hr align="left" class="dark-line"/>
+                    <p>The <b>Constructive Cost Model</b> (COCOMO) is a procedural software cost estimation model developed by Barry W. Boehm. The model parameters are derived from fitting a regression formula using data from historical projects (61 projects for COCOMO 81 and 163 projects for COCOMO II).</p>
+                    <div class="big-margin">
+                        <a class="btn btn-primary" href="about.html#cocomo">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Basic COCOMO</h3>
+                <hr align="left" class="light-line"/>
+                <p><b>Basic COCOMO</b> computes software development effort (and cost) as a function of program size. Program size is expressed in estimated thousands of source lines of code (SLOC, KLOC).</p>
+                <p>COCOMO applies to three classes of software projects:</p>
+                <ul>
+                    <li>Organic projects</li>
+                    <li>Semi-detached projects</li>
+                    <li>Embedded projects</li>
+                </ul>
+                <div class="big-margin">
+                    <a class="btn btn-primary" href="about.html#basic">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img class="img-responsive" src="images/calculator1.jpg" alt="Cost Constructive Calculator">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid dark-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-responsive" src="images/calculator2.jpg" alt="Cost Constructive Calculator">
+                </div>
+                <div class="col-md-6">
+                    <h3>Intermediate COCOMO</h3>
+                    <hr align="left" class="dark-line"/>
+                    <p><b>Intermediate COCOMO</b> computes software development effort as function of program size and a set of "cost drivers" that include subjective assessment of product, hardware, personnel and project attributes. This extension considers a set of four "cost drivers", each with a number of subsidiary attributes.</p>
+                    <p>Each of the 15 attributes receives a rating on a six-point scale that ranges from "very low" to "extra high" (in importance or value). An effort multiplier from the table below applies to the rating. The product of all effort multipliers results in an effort adjustment factor (EAF).</p>
+                    <div class="big-margin">
+                        <a class="btn btn-primary" href="about.html#intermediate">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Detailed COCOMO</h3>
+                <hr align="left" class="light-line"/>
+                <p><b>Detailed COCOMO</b> incorporates all characteristics of the intermediate version with an assessment of the cost driver's impact on each step (analysis, design, etc.) of the software engineering process.</p>
+                <p>The detailed model uses different effort multipliers for each cost driver attribute. These Phase Sensitive effort multipliers are each to determine the amount of effort required to complete each phase.</p>
+                <div class="big-margin">
+                    <a class="btn btn-primary" href="about.html#detailed">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img class="img-responsive" src="images/calculator3.jpg" alt="Cost Constructive Calculator">
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; Cost Constructive Calculator 2017.</p>
+      </div>
+    </footer>
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>

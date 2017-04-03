@@ -1,0 +1,430 @@
+<div class="row" id="calculate">
+			<div class="col-md-3 no-left-pad">
+				<ul class="nav nav-pills nav-stacked">
+					<li class="active"><a data-toggle="tab" href="#one">Step 1</a></li>
+					<li><a data-toggle="tab" href="#two">Step 2</a></li>
+					<li><a data-toggle="tab" href="#three">Step 3</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-9 no-right-pad">
+				<div class="tab-content">
+					<div id="one" class="tab-pane fade in active">
+						<div class="well">
+                            <legend>Software Product Size</legend>
+                            <p>
+                                The model uses a product size expressed in source lines of code (SLOC). The bigger the size the larger the effort and the longer the schedule.
+                            </p>
+                            <div class="form-group">
+                                <label for="psInput">Please enter the product size in SLOC:</label>
+                                <input type="number" class="form-control flat-input" id="psInput" placeholder="Enter the product size in SLOC" min="1" max="1000000000" title="from 1 to 1000000000">
+                            </div>
+                            <button type="button" class="btn btn-purple">Next step</button>
+						</div>
+					</div>
+
+					<div id="two" class="tab-pane fade">
+                        <div class="well">
+                            <legend>Software Development Mode</legend>
+                            <p>
+                                The software project needs to be described with one of three development modes. These modes range from the familiar to the ambitious, tightly constrained development projects.
+                            </p>
+                            <ul>
+                                <li>Choose <b>Organic</b> for relatively small teams developing software in a highly familiar, in-house environment.</li>
+                                <li>Choose <b>Semi-Detached</b> when the team members have some experience related to some aspects of the system under development but not others and the team is composed of experienced and inexperience people.</li>
+                                <li>Choose <b>Embedded</b> if the project must operate within a strongly coupled complex of hardware, software, regulations, and operational procedures, such as real-time systems.</li>
+                            </ul>
+                            <div class="form-group">
+                                <label for="ptSelect">Choose one:</label>
+                                <select class="form-control flat-input" id="ptSelect">
+                                    <option>Organic</option>
+                                    <option>Semi-Detached</option>
+                                    <option>Embedded</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-purple">Next step</button>
+                        </div>
+					</div>
+
+					<div id="three" class="tab-pane fade">
+						<div class="well">
+                            <legend>Software Development Cost Drivers</legend>
+                            <p>
+                                There are four categories of cost drivers that are found significant performance predictors for a software development project. Each category has several cost drivers. Each driver has a possible rating from Very Low to Extra High. The ratings are used in the model to adjust the baseline development effort estimation up or down.
+                            </p>
+
+                            <div class="alert alert-info alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                                This step is optional. If you want to use basic COCOMO - skip this and press <strong>Calculate</strong> button. If you want to use intermediate COCOMO - <strong>fill all the fields below</strong> before pressing Calculate button.
+                            </div>
+
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <i class="more-less glyphicon glyphicon-plus"></i>
+                        Collapsible Group Item #1
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <i class="more-less glyphicon glyphicon-plus"></i>
+                        Collapsible Group Item #2
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <i class="more-less glyphicon glyphicon-plus"></i>
+                        Collapsible Group Item #3
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+
+    </div><!-- panel-group -->
+                            <!-- <div class="panel-group" id="accordion">
+                                <div class="panel panel-purple">
+                                  <div class="panel-heading">
+                                     <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#product">
+                                           Product Attributes
+                                        </a>
+                                     </h4>
+                                  </div>
+                                  
+                                  <div id="product" class="panel-collapse collapse in">
+                                     <div class="panel-body">
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                              <tr>
+                                                <th rowspan="2">#</th>
+                                                <th rowspan="2">Cost Drivers</th>
+                                                <th colspan="6">Rating</th>
+                                              </tr>
+                                              <tr>
+                                                <th>Very Low</th>
+                                                <th>Low</th>
+                                                <th>Nominal</th>
+                                                <th>High</th>
+                                                <th>Very High</th>
+                                                <th>Extra High</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th colspan="8">Product Attributes</th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td><a href="help/reliability.html">Required Reliability</a></td>
+                                                    <td><label><input type="radio" name="t1" value="0.75"/></label></td>
+                                                    <td><label><input type="radio" name="t1" value="0.88"/></label></td>
+                                                    <td><label><input type="radio" name="t1" value="1"/></label></td>
+                                                    <td><label><input type="radio" name="t1" value="1.15"/></label></td>
+                                                    <td><label><input type="radio" name="t1" value="1.40"/></label></td>
+                                                    <td>N/A</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>Database Size</td>
+                                                    <td></td>
+                                                    <td><label><input type="radio" name="t2" value="0.94"/></label></td>
+                                                    <td><label><input type="radio" name="t2" value="1.00"/></label></td>
+                                                    <td><label><input type="radio" name="t2" value="1.08"/></label></td>
+                                                    <td><label><input type="radio" name="t2" value="1.16"/></label></td>
+                                                    <td>N/A</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Product Complexity</td>
+                                                    <td><label><input type="radio" name="t3" value="0.70"/></label></td>
+                                                    <td><label><input type="radio" name="t3" value="0.85"/></label></td>
+                                                    <td><label><input type="radio" name="t3" value="1"/></label></td>
+                                                    <td><label><input type="radio" name="t3" value="1.15"/></label></td>
+                                                    <td><label><input type="radio" name="t3" value="1.30"/></label></td>
+                                                    <td><label><input type="radio" name="t3" value="1.65"/></label></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                     </div>
+                                  </div>
+                                </div>
+
+                                <div class = "panel panel-default">
+                                  <div class = "panel-heading">
+                                     <h4 class = "panel-title">
+                                        <a data-toggle = "collapse" data-parent = "#accordion" href = "#collapseTwo">
+                                           Click me to expand. Click me again to collapse.Section 2
+                                        </a>
+                                     </h4>
+                                  </div>
+
+                                  <div id = "collapseTwo" class = "panel-collapse collapse">
+                                     <div class = "panel-body">
+                                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt 
+                                           sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                                     </div>
+                                  </div>
+                                  
+                                </div>
+
+                                <div class = "panel panel-default">
+                                  <div class = "panel-heading">
+                                     <h4 class = "panel-title">
+                                        <a data-toggle = "collapse" data-parent = "#accordion" href = "#collapseThree">
+                                           Click me to expand. Click me again to collapse.Section 3
+                                        </a>
+                                     </h4>
+                                  </div>
+                                 
+                                  <div id = "collapseThree" class = "panel-collapse collapse">
+                                     <div class = "panel-body">
+                                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt 
+                                           sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                                     </div>
+                                  </div>
+                                 
+                                </div>
+                            </div> -->
+
+                            <button type="button" class="btn btn-purple">Calculate</button>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		
+        <!-- <h3 style="display: inline-block">PM = <span id="PM">0</span> (<sup>people</sup>/<sub>month</sub>)</h3>
+        <h3 style="display: inline-block">TM = <span id="TM">0</span> (time in months)</h3> -->
+
+    <!-- <div class="container">
+    	<table class="table table-striped table-hover">
+		    <thead>
+		      <tr>
+		      	<th rowspan="2">#</th>
+		        <th rowspan="2">Cost Drivers</th>
+		        <th colspan="6">Rating</th>
+		      </tr>
+		      <tr>
+                <th>Very Low</th>
+                <th>Low</th>
+                <th>Nominal</th>
+                <th>High</th>
+                <th>Very High</th>
+                <th>Extra High</th>
+	            </tr>
+		    </thead>
+		    <tbody>
+		    	<tr>
+		    		<th colspan="8">Product Attributes</th>
+                </tr>
+                <tr>
+                	<th scope="row">1</th>
+                    <td><a href="help/reliability.html">Required Reliability</a></td>
+                    <td><label><input type="radio" name="t1" value="0.75"/></label></td>
+                    <td><label><input type="radio" name="t1" value="0.88"/></label></td>
+                    <td><label><input type="radio" name="t1" value="1"/></label></td>
+                    <td><label><input type="radio" name="t1" value="1.15"/></label></td>
+                    <td><label><input type="radio" name="t1" value="1.40"/></label></td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                	<th scope="row">2</th>
+                    <td>Database Size</td>
+                    <td></td>
+                    <td><label><input type="radio" name="t2" value="0.94"/></label></td>
+                    <td><label><input type="radio" name="t2" value="1.00"/></label></td>
+                    <td><label><input type="radio" name="t2" value="1.08"/></label></td>
+                    <td><label><input type="radio" name="t2" value="1.16"/></label></td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                	<th scope="row">3</th>
+                    <td>Product Complexity</td>
+                    <td><label><input type="radio" name="t3" value="0.70"/></label></td>
+                    <td><label><input type="radio" name="t3" value="0.85"/></label></td>
+                    <td><label><input type="radio" name="t3" value="1"/></label></td>
+                    <td><label><input type="radio" name="t3" value="1.15"/></label></td>
+                    <td><label><input type="radio" name="t3" value="1.30"/></label></td>
+                    <td><label><input type="radio" name="t3" value="1.65"/></label></td>
+                </tr>
+                <tr>
+                    <th colspan="8">Computer Attributes</th>
+                </tr>
+                <tr>
+                	<th scope="row">4</th>
+                    <td>Execution Time Constraint</td>
+                    <td></td>
+                    <td></td>
+                    <td><label><input type="radio" name="t4" value="1"/></label></td>
+                    <td><label><input type="radio" name="t4" value="1.11"/></label></td>
+                    <td><label><input type="radio" name="t4" value="1.30"/></label></td>
+                    <td><label><input type="radio" name="t4" value="1.66"/></label></td>
+                </tr>
+                <tr>
+                	<th scope="row">5</th>
+                    <td>Main Storage Constraint</td>
+                    <td></td>
+                    <td></td>
+                    <td><label><input type="radio" name="t5" value="1"/></label></td>
+                    <td><label><input type="radio" name="t5" value="1.06"/></label></td>
+                    <td><label><input type="radio" name="t5" value="1.21"/></label></td>
+                    <td><label><input type="radio" name="t5" value="1.56"/></label></td>
+                </tr>
+                <tr>
+                	<th scope="row">6</th>
+                    <td>Virtual Machine Volatility</td>
+                    <td></td>
+                    <td><label><input type="radio" name="t6" value="0.87"/></label></td>
+                    <td><label><input type="radio" name="t6" value="1"/></label></td>
+                    <td><label><input type="radio" name="t6" value="1.15"/></label></td>
+                    <td><label><input type="radio" name="t6" value="1.30"/></label></td>
+                    <td></td>
+                </tr>
+                <tr>
+                	<th scope="row">7</th>
+                    <td>Computer Turnaround Time</td>
+                    <td></td>
+                    <td><label><input type="radio" name="t7" value="0.87"/></label></td>
+                    <td><label><input type="radio" name="t7" value="1"/></label></td>
+                    <td><label><input type="radio" name="t7" value="1.07"/></label></td>
+                    <td><label><input type="radio" name="t7" value="1.15"/></label></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th colspan="8">Personnel Attributes</th>
+                </tr>
+                <tr>
+                	<th scope="row">8</th>
+                    <td>Analyst Capability</td>
+                    <td><label><input type="radio" name="t8" value="1.46"/></label></td>
+                    <td><label><input type="radio" name="t8" value="1.19"/></label></td>
+                    <td><label><input type="radio" name="t8" value="1"/></label></td>
+                    <td><label><input type="radio" name="t8" value="0.86"/></label></td>
+                    <td><label><input type="radio" name="t8" value="0.71"/></label></td>
+                    <td></td>
+                </tr>
+                <tr>
+                	<th scope="row">9</th>
+                    <td>Applications Experience</td>
+                    <td><label><input type="radio" name="t9" value="1.29"/></label></td>
+                    <td><label><input type="radio" name="t9" value="1.13"/></label></td>
+                    <td><label><input type="radio" name="t9" value="1"/></label></td>
+                    <td><label><input type="radio" name="t9" value="0.91"/></label></td>
+                    <td><label><input type="radio" name="t9" value="0.82"/></label></td>
+                    <td></td>
+                </tr>
+                <tr>
+                	<th scope="row">10</th>
+                    <td>Programmer Capability</td>
+                    <td><label><input type="radio" name="t10" value="1.42"/></label></td>
+                    <td><label><input type="radio" name="t10" value="1.17"/></label></td>
+                    <td><label><input type="radio" name="t10" value="1"/></label></td>
+                    <td><label><input type="radio" name="t10" value="0.86"/></label></td>
+                    <td><label><input type="radio" name="t10" value="0.70"/></label></td>
+                    <td></td>
+                </tr>
+                <tr>
+                	<th scope="row">11</th>
+                    <td>Virtual Machine Experience</td>
+                    <td><label><input type="radio" name="t11" value="1.21"/></label></td>
+                    <td><label><input type="radio" name="t11" value="1.10"/></label></td>
+                    <td><label><input type="radio" name="t11" value="1"/></label></td>
+                    <td><label><input type="radio" name="t11" value="0.9"/></label></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                	<th scope="row">12</th>
+                    <td>Programming Language Experience</td>
+                    <td><label><input type="radio" name="t12" value="1.14"/></label></td>
+                    <td><label><input type="radio" name="t12" value="1.07"/></label></td>
+                    <td><label><input type="radio" name="t12" value="1"/></label></td>
+                    <td><label><input type="radio" name="t12" value="0.95"/></label></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th colspan="8">Project Attributes</th>
+                </tr>
+                <tr>
+                	<th scope="row">13</th>
+                    <td>Modern Programming Practices</td>
+                    <td><label><input type="radio" name="t13" value="1.24"/></label></td>
+                    <td><label><input type="radio" name="t13" value="1.10"/></label></td>
+                    <td><label><input type="radio" name="t13" value="1"/></label></td>
+                    <td><label><input type="radio" name="t13" value="0.91"/></label></td>
+                    <td><label><input type="radio" name="t13" value="0.82"/></label></td>
+                    <td></td>
+                </tr>
+                <tr>
+                	<th scope="row">14</th>
+                    <td>Use of Software Tools</td>
+                    <td><label><input type="radio" name="t14" value="1.24"/></label></td>
+                    <td><label><input type="radio" name="t14" value="1.10"/></label></td>
+                    <td><label><input type="radio" name="t14" value="1"/></label></td>
+                    <td><label><input type="radio" name="t14" value="0.91"/></label></td>
+                    <td><label><input type="radio" name="t14" value="0.83"/></label></td>
+                    <td></td>
+                </tr>
+                <tr>
+                	<th scope="row">15</th>
+                    <td>Required Development Schedule</td>
+                    <td><label><input type="radio" name="t15" value="1.23"/></label></td>
+                    <td><label><input type="radio" name="t15" value="1.08"/></label></td>
+                    <td><label><input type="radio" name="t15" value="1"/></label></td>
+                    <td><label><input type="radio" name="t15" value="1.04"/></label></td>
+                    <td><label><input type="radio" name="t15" value="1.10"/></label></td>
+                    <td></td>
+                </tr>
+		    </tbody>
+		</table> -->	
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('[data-toggle="tooltip"]').tooltip(); 
+			});
+		</script>
+        <script>
+        function toggleIcon(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+}
+$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+$('.panel-group').on('shown.bs.collapse', toggleIcon);
+</script>
