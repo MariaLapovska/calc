@@ -3,359 +3,370 @@
 <head lang="en">
 	<meta charset="UTF-8">
 	<title>Cost Constructive Calculator</title>
-    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="css/custom.css"/>
 </head>
 <body>
 
 	<!-- Menu -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="main.html">Cost Constructive Calculator</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="main.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-                    <li class="active"><a href="#"><i class="fa fa-calculator" aria-hidden="true"></i> Calculator</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-info-circle" aria-hidden="true"></i> About
-                            <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-header">What is</li>
-                            <li><a href="about.html#cocomo">Constructive Cost Model</a></li>
-                            <li><a href="about.html#basic">Basic COCOMO</a></li>
-                            <li><a href="about.html#intermediate">Intermediate COCOMO</a></li>
-                            <li><a href="about.html#detailed">Detailed COCOMO</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="main.html">Cost Constructive Calculator</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="main.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+					<li class="active"><a href="#"><i class="fa fa-calculator" aria-hidden="true"></i> Calculator</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-info-circle" aria-hidden="true"></i> About
+							<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class="dropdown-header">What is</li>
+							<li><a href="about.html#cocomo">Constructive Cost Model</a></li>
+							<li><a href="about.html#basic">Basic COCOMO</a></li>
+							<li><a href="about.html#intermediate">Intermediate COCOMO</a></li>
+							<li><a href="about.html#detailed">Detailed COCOMO</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
 	<!-- End menu -->
 
-    <!-- Banner -->
-    <div class="jumbotron jumbotron-narrow">
-    </div>
-    <!-- End banner -->
+	<div class="container-fluid">
+		<div class="container">
+			<div class="page-header">
+				<h1>Cost Constructive Calculator</h1>
+			</div>
+		</div>
+	</div>
 
-	<div class="container">
-        <div class="row" id="calculate">
-            <div class="col-lg-12">
-                <h2 class="page-header no-top">Cost Constructive Calculator</h2>
-            </div>
+	<div class="container-fluid">
+		<div class="container">
+			<div class="row no-top">
+				<div class="col-lg-12">
+					<h2>Step 1. <small>Software Product Size</small></h2>
+					<hr align="left" class="light-line"/>
+					<p>
+						The model uses a product size expressed in <b>source lines of code</b> (SLOC). The bigger the size the larger the effort and the longer the schedule.
+					</p>
+					<p><b>SLOC</b> is defined such that:</p>
+					<ul>
+						<li>Only Source lines that are delivered as part of the product are included - test drivers and other support software is excluded</li>
+						<li>Source lines are created by the project staff - code created by applications generators is excluded</li>
+						<li>One SLOC is one logical line of code</li>
+						<li>Declarations are counted as SLOC</li>
+						<li>Comments are not counted as SLOC</li>
+					</ul>
+					<div class="form-group">
+						<label for="psInput">Please, enter the product size in SLOC:</label>
+						<input type="number" class="form-control form-input-narrow" id="psInput" placeholder="Enter the product size in SLOC" min="1" max="1000000000" title="from 1 to 1000000000">
+					</div>
+					<button type="button" class="btn btn-primary next">Next Step</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
-            <div class="col-md-3">
-                <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a data-toggle="tab" href="#one">Step 1</a></li>
-                    <li><a data-toggle="tab" href="#two">Step 2</a></li>
-                    <li><a data-toggle="tab" href="#three">Step 3</a></li>
-                </ul>
-            </div>
+	<div class="container-fluid" style="background-color: #f1f1f1;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2>Step 2. <small>Software Development Mode</small></h2>
+					<hr align="left" class="dark-line"/>
+					<p>
+						The software project needs to be described with one of three development modes. These modes range from the familiar to the ambitious, tightly constrained development projects.
+					</p>
+					<ul>
+						<li>Choose <b>Organic</b> for relatively small teams developing software in a highly familiar, in-house environment.</li>
+						<li>Choose <b>Semi-Detached</b> when the team members have some experience related to some aspects of the system under development but not others and the team is composed of experienced and inexperience people.</li>
+						<li>Choose <b>Embedded</b> if the project must operate within a strongly coupled complex of hardware, software, regulations, and operational procedures, such as real-time systems.</li>
+					</ul>
+					<div class="form-group">
+						<label for="ptSelect">Please, choose one:</label>
+						<select class="form-control form-input-narrow" id="ptSelect">
+							<option>Organic</option>
+							<option>Semi-Detached</option>
+							<option>Embedded</option>
+						</select>
+					</div>
+					<button type="button" class="btn btn-primary next">Next Step</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
-            <div class="col-md-9">
-                <div class="tab-content">
-                    <div id="one" class="tab-pane fade in active">
-                        <h3>Software Product Size</h3>
-                        <p>
-                            The model uses a product size expressed in source lines of code (SLOC). The bigger the size the larger the effort and the longer the schedule.
-                        </p>
-                        <div class="form-group">
-                            <label for="psInput">Please enter the product size in SLOC:</label>
-                            <input type="number" class="form-control form-input-narrow" id="psInput" placeholder="Enter the product size in SLOC" min="1" max="1000000000" title="from 1 to 1000000000">
-                        </div>
-                        <button type="button" class="btn btn-primary next">Next Step</button>
-                    </div>
+	<div class="container-fluid">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2>Step 3. <small>Software Development Cost Drivers</small></h2>
+					<hr align="left" class="light-line"/>
+					<p>
+						There are four categories of cost drivers that are found significant performance predictors for a software development project. Each category has several cost drivers. Each driver has a possible rating from Very Low to Extra High. The ratings are used in the model to adjust the baseline development effort estimation up or down.
+					</p>
 
-                    <div id="two" class="tab-pane fade">
-                        <h3>Software Development Mode</h3>
-                        <p>
-                            The software project needs to be described with one of three development modes. These modes range from the familiar to the ambitious, tightly constrained development projects.
-                        </p>
-                        <ul>
-                            <li>Choose <b>Organic</b> for relatively small teams developing software in a highly familiar, in-house environment.</li>
-                            <li>Choose <b>Semi-Detached</b> when the team members have some experience related to some aspects of the system under development but not others and the team is composed of experienced and inexperience people.</li>
-                            <li>Choose <b>Embedded</b> if the project must operate within a strongly coupled complex of hardware, software, regulations, and operational procedures, such as real-time systems.</li>
-                        </ul>
-                        <div class="form-group">
-                            <label for="ptSelect">Choose one:</label>
-                            <select class="form-control form-input-narrow" id="ptSelect">
-                                <option>Organic</option>
-                                <option>Semi-Detached</option>
-                                <option>Embedded</option>
-                            </select>
-                        </div>
-                        <button type="button" class="btn btn-primary next">Next Step</button>
-                    </div>
+					<div class="bs-callout">
+						This step is optional. If you want to use basic COCOMO - skip this and press <b>Calculate</b> button. If you want to use intermediate COCOMO - <b>fill all the fields below</b> before pressing Calculate button.
+					</div>
 
-                    <div id="three" class="tab-pane fade">
-                        <h3>Software Development Cost Drivers</h3>
-                        <p>
-                            There are four categories of cost drivers that are found significant performance predictors for a software development project. Each category has several cost drivers. Each driver has a possible rating from Very Low to Extra High. The ratings are used in the model to adjust the baseline development effort estimation up or down.
-                        </p>
+					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+						<div class="panel panel-default">
+							<div class="panel-heading white" role="tab" id="headingOne">
+								<h4 class="panel-title">
+									<i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;
+									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									Product Attributes
+									</a>
+								</h4>
+							</div>
+							<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+								<div class="panel-body">
+									<div class="form-group">
+										<label for="ptSelect"><a href="about.html#reliability">Required Reliability</a></label>
+										<select class="form-control form-input-narrow" id="ptSelect">
+											<option>Very Low</option>
+											<option>Low</option>
+											<option>Normal</option>
+											<option>High</option>
+											<option>Very High</option> 
+											<option>Extra High</option>  
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="ptSelect"><a href="about.html#database">Database Size</a></label>
+										<select class="form-control form-input-narrow" id="ptSelect">
+											<option>Very Low</option>
+											<option>Low</option>
+											<option>Normal</option>
+											<option>High</option>
+											<option>Very High</option> 
+											<option>Extra High</option>  
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="ptSelect"><a href="about.html#database">Product Complexity</a></label>
+										<select class="form-control form-input-narrow" id="ptSelect">
+											<option>Very Low</option>
+											<option>Low</option>
+											<option>Normal</option>
+											<option>High</option>
+											<option>Very High</option> 
+											<option>Extra High</option>  
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
 
-                        <div class="bs-callout">
-                            This step is optional. If you want to use basic COCOMO - skip this and press <b>Calculate</b> button. If you want to use intermediate COCOMO - <b>fill all the fields below</b> before pressing Calculate button.
-                        </div>
+						<div class="panel panel-default">
+							<div class="panel-heading white" role="tab" id="headingTwo">
+								<h4 class="panel-title">
+									<i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;
+									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									Computer Attributes
+									</a>
+								</h4>
+							</div>
+							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+								<div class="panel-body">
+									<div class="form-group">
+										<label for="ptSelect"><a href="about.html#reliability">Execution Time Constraint</a></label>
+										<select class="form-control form-input-narrow" id="ptSelect">
+											<option>Very Low</option>
+											<option>Low</option>
+											<option>Normal</option>
+											<option>High</option>
+											<option>Very High</option> 
+											<option>Extra High</option>  
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="ptSelect"><a href="about.html#database">Main Storage Constraint</a></label>
+										<select class="form-control form-input-narrow" id="ptSelect">
+											<option>Very Low</option>
+											<option>Low</option>
+											<option>Normal</option>
+											<option>High</option>
+											<option>Very High</option> 
+											<option>Extra High</option>  
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="ptSelect"><a href="about.html#database">Virtual Machine Volatility</a></label>
+										<select class="form-control form-input-narrow" id="ptSelect">
+											<option>Very Low</option>
+											<option>Low</option>
+											<option>Normal</option>
+											<option>High</option>
+											<option>Very High</option> 
+											<option>Extra High</option>  
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="ptSelect"><a href="about.html#database">Computer Turnaround Time</a></label>
+										<select class="form-control form-input-narrow" id="ptSelect">
+											<option>Very Low</option>
+											<option>Low</option>
+											<option>Normal</option>
+											<option>High</option>
+											<option>Very High</option> 
+											<option>Extra High</option>  
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
 
-                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                            <div class="panel panel-default">
-                                <div class="panel-heading white-heading" role="tab" id="headingOne">
-                                    <h4 class="panel-title">
-                                        <i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;
-                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Product Attributes
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                                    <div class="panel-body">
-                                        <div class="form-group">
-                                            <label for="ptSelect"><a href="about.html#reliability">Required Reliability</a></label>
-                                            <select class="form-control form-input-narrow" id="ptSelect">
-                                                <option>Very Low</option>
-                                                <option>Low</option>
-                                                <option>Normal</option>
-                                                <option>High</option>
-                                                <option>Very High</option> 
-                                                <option>Extra High</option>  
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="ptSelect"><a href="about.html#database">Database Size</a></label>
-                                            <select class="form-control form-input-narrow" id="ptSelect">
-                                                <option>Very Low</option>
-                                                <option>Low</option>
-                                                <option>Normal</option>
-                                                <option>High</option>
-                                                <option>Very High</option> 
-                                                <option>Extra High</option>  
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="ptSelect"><a href="about.html#database">Product Complexity</a></label>
-                                            <select class="form-control form-input-narrow" id="ptSelect">
-                                                <option>Very Low</option>
-                                                <option>Low</option>
-                                                <option>Normal</option>
-                                                <option>High</option>
-                                                <option>Very High</option> 
-                                                <option>Extra High</option>  
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+						<div class="panel panel-default">
+							<div class="panel-heading white" role="tab" id="headingThree">
+								<h4 class="panel-title">
+									<i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;
+									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+										Personnel Attributes
+									</a>
+								</h4>
+							</div>
+							<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+								<div class="panel-body">
+									<div class="form-group">
+										<label for="ptSelect"><a href="about.html#reliability">Analyst Capability</a></label>
+										<select class="form-control form-input-narrow" id="ptSelect">
+											<option>Very Low</option>
+											<option>Low</option>
+											<option>Normal</option>
+											<option>High</option>
+											<option>Very High</option> 
+											<option>Extra High</option>  
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="ptSelect"><a href="about.html#database">Applications Experience</a></label>
+										<select class="form-control form-input-narrow" id="ptSelect">
+											<option>Very Low</option>
+											<option>Low</option>
+											<option>Normal</option>
+											<option>High</option>
+											<option>Very High</option> 
+											<option>Extra High</option>  
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="ptSelect"><a href="about.html#database">Programmer Capability</a></label>
+										<select class="form-control form-input-narrow" id="ptSelect">
+											<option>Very Low</option>
+											<option>Low</option>
+											<option>Normal</option>
+											<option>High</option>
+											<option>Very High</option> 
+											<option>Extra High</option>  
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="ptSelect"><a href="about.html#database">Virtual Machine Experience</a></label>
+										<select class="form-control form-input-narrow" id="ptSelect">
+											<option>Very Low</option>
+											<option>Low</option>
+											<option>Normal</option>
+											<option>High</option>
+											<option>Very High</option> 
+											<option>Extra High</option>  
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="ptSelect"><a href="about.html#database">Programming Language Experience</a></label>
+										<select class="form-control form-input-narrow" id="ptSelect">
+											<option>Very Low</option>
+											<option>Low</option>
+											<option>Normal</option>
+											<option>High</option>
+											<option>Very High</option> 
+											<option>Extra High</option>  
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
 
-                            <div class="panel panel-default">
-                                <div class="panel-heading white-heading" role="tab" id="headingTwo">
-                                    <h4 class="panel-title">
-                                        <i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;
-                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Computer Attributes
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                    <div class="panel-body">
-                                        <div class="form-group">
-                                            <label for="ptSelect"><a href="about.html#reliability">Execution Time Constraint</a></label>
-                                            <select class="form-control form-input-narrow" id="ptSelect">
-                                                <option>Very Low</option>
-                                                <option>Low</option>
-                                                <option>Normal</option>
-                                                <option>High</option>
-                                                <option>Very High</option> 
-                                                <option>Extra High</option>  
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="ptSelect"><a href="about.html#database">Main Storage Constraint</a></label>
-                                            <select class="form-control form-input-narrow" id="ptSelect">
-                                                <option>Very Low</option>
-                                                <option>Low</option>
-                                                <option>Normal</option>
-                                                <option>High</option>
-                                                <option>Very High</option> 
-                                                <option>Extra High</option>  
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="ptSelect"><a href="about.html#database">Virtual Machine Volatility</a></label>
-                                            <select class="form-control form-input-narrow" id="ptSelect">
-                                                <option>Very Low</option>
-                                                <option>Low</option>
-                                                <option>Normal</option>
-                                                <option>High</option>
-                                                <option>Very High</option> 
-                                                <option>Extra High</option>  
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="ptSelect"><a href="about.html#database">Computer Turnaround Time</a></label>
-                                            <select class="form-control form-input-narrow" id="ptSelect">
-                                                <option>Very Low</option>
-                                                <option>Low</option>
-                                                <option>Normal</option>
-                                                <option>High</option>
-                                                <option>Very High</option> 
-                                                <option>Extra High</option>  
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+						<div class="panel panel-default">
+							<div class="panel-heading white" role="tab" id="headingFour">
+								<h4 class="panel-title">
+									<i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;
+									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+										Project Attributes
+									</a>
+								</h4>
+							</div>
+							<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+								<div class="panel-body">
+									<div class="form-group">
+										<label for="ptSelect"><a href="about.html#database">Modern Programming Practices</a></label>
+										<select class="form-control form-input-narrow" id="ptSelect">
+											<option>Very Low</option>
+											<option>Low</option>
+											<option>Normal</option>
+											<option>High</option>
+											<option>Very High</option> 
+											<option>Extra High</option>  
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="ptSelect"><a href="about.html#database">Use of Software Tools</a></label>
+										<select class="form-control form-input-narrow" id="ptSelect">
+											<option>Very Low</option>
+											<option>Low</option>
+											<option>Normal</option>
+											<option>High</option>
+											<option>Very High</option> 
+											<option>Extra High</option>  
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="ptSelect"><a href="about.html#database">Required Development Schedule</a></label>
+										<select class="form-control form-input-narrow" id="ptSelect">
+											<option>Very Low</option>
+											<option>Low</option>
+											<option>Normal</option>
+											<option>High</option>
+											<option>Very High</option> 
+											<option>Extra High</option>  
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="btn btn-primary" id="calculate">Calculate</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
-                            <div class="panel panel-default">
-                                <div class="panel-heading white-heading" role="tab" id="headingThree">
-                                    <h4 class="panel-title">
-                                        <i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;
-                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Personnel Attributes
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                    <div class="panel-body">
-                                        <div class="form-group">
-                                            <label for="ptSelect"><a href="about.html#reliability">Analyst Capability</a></label>
-                                            <select class="form-control form-input-narrow" id="ptSelect">
-                                                <option>Very Low</option>
-                                                <option>Low</option>
-                                                <option>Normal</option>
-                                                <option>High</option>
-                                                <option>Very High</option> 
-                                                <option>Extra High</option>  
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="ptSelect"><a href="about.html#database">Applications Experience</a></label>
-                                            <select class="form-control form-input-narrow" id="ptSelect">
-                                                <option>Very Low</option>
-                                                <option>Low</option>
-                                                <option>Normal</option>
-                                                <option>High</option>
-                                                <option>Very High</option> 
-                                                <option>Extra High</option>  
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="ptSelect"><a href="about.html#database">Programmer Capability</a></label>
-                                            <select class="form-control form-input-narrow" id="ptSelect">
-                                                <option>Very Low</option>
-                                                <option>Low</option>
-                                                <option>Normal</option>
-                                                <option>High</option>
-                                                <option>Very High</option> 
-                                                <option>Extra High</option>  
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="ptSelect"><a href="about.html#database">Virtual Machine Experience</a></label>
-                                            <select class="form-control form-input-narrow" id="ptSelect">
-                                                <option>Very Low</option>
-                                                <option>Low</option>
-                                                <option>Normal</option>
-                                                <option>High</option>
-                                                <option>Very High</option> 
-                                                <option>Extra High</option>  
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="ptSelect"><a href="about.html#database">Programming Language Experience</a></label>
-                                            <select class="form-control form-input-narrow" id="ptSelect">
-                                                <option>Very Low</option>
-                                                <option>Low</option>
-                                                <option>Normal</option>
-                                                <option>High</option>
-                                                <option>Very High</option> 
-                                                <option>Extra High</option>  
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="panel panel-default">
-                                <div class="panel-heading white-heading" role="tab" id="headingFour">
-                                    <h4 class="panel-title">
-                                        <i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;
-                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                            Project Attributes
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                                    <div class="panel-body">
-                                        <div class="form-group">
-                                            <label for="ptSelect"><a href="about.html#database">Modern Programming Practices</a></label>
-                                            <select class="form-control form-input-narrow" id="ptSelect">
-                                                <option>Very Low</option>
-                                                <option>Low</option>
-                                                <option>Normal</option>
-                                                <option>High</option>
-                                                <option>Very High</option> 
-                                                <option>Extra High</option>  
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="ptSelect"><a href="about.html#database">Use of Software Tools</a></label>
-                                            <select class="form-control form-input-narrow" id="ptSelect">
-                                                <option>Very Low</option>
-                                                <option>Low</option>
-                                                <option>Normal</option>
-                                                <option>High</option>
-                                                <option>Very High</option> 
-                                                <option>Extra High</option>  
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="ptSelect"><a href="about.html#database">Required Development Schedule</a></label>
-                                            <select class="form-control form-input-narrow" id="ptSelect">
-                                                <option>Very Low</option>
-                                                <option>Low</option>
-                                                <option>Normal</option>
-                                                <option>High</option>
-                                                <option>Very High</option> 
-                                                <option>Extra High</option>  
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <button type="button" class="btn btn-primary" id="calculate">Calculate</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="footer">
-      <div class="container">
-        <p>Cost Constructive Calculator 2017.</p>
-      </div>
-    </footer>
+	<footer class="footer">
+	  <div class="container">
+		<p>&copy; Cost Constructive Calculator 2017.</p>
+	  </div>
+	</footer>
 
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        $('.next').click(function() {
-            $('.nav-pills > .active').next('li').find('a').trigger('click');
-        });
-    </script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$('.next').click(function() {
+			$('.nav-pills > .active').next('li').find('a').trigger('click');
+		});
+	</script>
 </body>
 </html>
