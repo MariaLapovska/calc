@@ -75,13 +75,13 @@
 						<label for="psInput">Please, enter the product size in SLOC:</label>
 						<input type="number" class="form-control form-input-narrow" id="psInput" placeholder="Enter the product size in SLOC" min="1" max="1000000000" title="from 1 to 1000000000">
 					</div>
-					<button type="button" class="btn btn-primary next">Next Step</button>
+					<button type="button" class="btn btn-primary" id="toTwo">Next Step</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="container-fluid" style="background-color: #f1f1f1;">
+	<div class="container-fluid" style="background-color: #f1f1f1;" id="two">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -103,13 +103,13 @@
 							<option>Embedded</option>
 						</select>
 					</div>
-					<button type="button" class="btn btn-primary next">Next Step</button>
+					<button type="button" class="btn btn-primary" id="toThree">Next Step</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="container-fluid">
+	<div class="container-fluid" id="three">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -364,8 +364,15 @@
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript">
-		$('.next').click(function() {
-			$('.nav-pills > .active').next('li').find('a').trigger('click');
+		$("#toTwo").click(function() {
+		    $('html, body').animate({
+		        scrollTop: $("#two").offset().top
+		    }, 1000);
+		});
+		$("#toThree").click(function() {
+		    $('html, body').animate({
+		        scrollTop: $("#three").offset().top
+		    }, 1000);
 		});
 	</script>
 </body>
