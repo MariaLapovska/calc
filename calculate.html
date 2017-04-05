@@ -31,7 +31,6 @@
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-info-circle" aria-hidden="true"></i> About
 							<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li class="dropdown-header">What is</li>
 							<li><a href="about.html#cocomo">Constructive Cost Model</a></li>
 							<li><a href="about.html#basic">Basic COCOMO</a></li>
 							<li><a href="about.html#intermediate">Intermediate COCOMO</a></li>
@@ -81,7 +80,7 @@
 		</div>
 	</div>
 
-	<div class="container-fluid" style="background-color: #f1f1f1;" id="two">
+	<div class="container-fluid" style="background-color: #f5f5f5;" id="two">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -135,38 +134,58 @@
 							</div>
 							<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 								<div class="panel-body">
-									<div class="form-group">
-										<label for="ptSelect"><a href="about.html#reliability">Required Reliability</a></label>
-										<select class="form-control form-input-narrow" id="ptSelect">
-											<option>Very Low</option>
-											<option>Low</option>
-											<option>Normal</option>
-											<option>High</option>
-											<option>Very High</option> 
-											<option>Extra High</option>  
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="ptSelect"><a href="about.html#database">Database Size</a></label>
-										<select class="form-control form-input-narrow" id="ptSelect">
-											<option>Very Low</option>
-											<option>Low</option>
-											<option>Normal</option>
-											<option>High</option>
-											<option>Very High</option> 
-											<option>Extra High</option>  
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="ptSelect"><a href="about.html#database">Product Complexity</a></label>
-										<select class="form-control form-input-narrow" id="ptSelect">
-											<option>Very Low</option>
-											<option>Low</option>
-											<option>Normal</option>
-											<option>High</option>
-											<option>Very High</option> 
-											<option>Extra High</option>  
-										</select>
+									<div class="row">
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<label for="ptSelect"><a href="about.html#reliability">Required Reliability</a></label>
+												<select class="form-control" id="ptSelect">
+													<option>Very Low</option>
+													<option>Low</option>
+													<option>Normal</option>
+													<option>High</option>
+													<option>Very High</option> 
+													<option>Extra High</option>  
+												</select>
+											</div>
+											<hr align="left" class="light-line"/>
+											<p>
+												This reflects the extent that a software product can be expected to perform its intended functions satisfactorily.
+											</p>
+										</div>
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<label for="ptSelect"><a href="about.html#database">Database Size</a></label>
+												<select class="form-control" id="ptSelect">
+													<option>Very Low</option>
+													<option>Low</option>
+													<option>Normal</option>
+													<option>High</option>
+													<option>Very High</option> 
+													<option>Extra High</option>  
+												</select>
+											</div>
+											<hr align="left" class="light-line"/>
+											<p>
+												This is the relative database size to be developed where size refers to the amount of data to be assembled and stored in non-main storage. 
+											</p>
+										</div>
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<label for="ptSelect"><a href="about.html#database">Product Complexity</a></label>
+												<select class="form-control" id="ptSelect">
+													<option>Very Low</option>
+													<option>Low</option>
+													<option>Normal</option>
+													<option>High</option>
+													<option>Very High</option> 
+													<option>Extra High</option>  
+												</select>
+											</div>
+											<hr align="left" class="light-line"/>
+											<p>
+												Complexity is assessed as the subjective average of four types of control functions: control, computation, device-dependent, or data management operations.
+											</p>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -183,49 +202,77 @@
 							</div>
 							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 								<div class="panel-body">
-									<div class="form-group">
-										<label for="ptSelect"><a href="about.html#reliability">Execution Time Constraint</a></label>
-										<select class="form-control form-input-narrow" id="ptSelect">
-											<option>Very Low</option>
-											<option>Low</option>
-											<option>Normal</option>
-											<option>High</option>
-											<option>Very High</option> 
-											<option>Extra High</option>  
-										</select>
+									<div class="row">
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<label for="ptSelect"><a href="about.html#reliability">Execution Time Constraint</a></label>
+												<select class="form-control" id="ptSelect">
+													<option>Very Low</option>
+													<option>Low</option>
+													<option>Normal</option>
+													<option>High</option>
+													<option>Very High</option> 
+													<option>Extra High</option>  
+												</select>
+												<hr align="left" class="light-line"/>
+												<p>
+													This reflects the degree of execution time constraint imposed upon a software product.
+												</p>
+											</div>
+										</div>
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<label for="ptSelect"><a href="about.html#database">Main Storage Constraint</a></label>
+												<select class="form-control" id="ptSelect">
+													<option>Very Low</option>
+													<option>Low</option>
+													<option>Normal</option>
+													<option>High</option>
+													<option>Very High</option> 
+													<option>Extra High</option>  
+												</select>
+												<hr align="left" class="light-line"/>
+												<p>
+													This reflects the percentage of main storage expected to be used by the software product and any subsystems consuming the main storage resources.
+												</p>
+											</div>
+										</div>
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<label for="ptSelect"><a href="about.html#database">Virtual Machine Volatility</a></label>
+												<select class="form-control" id="ptSelect">
+													<option>Very Low</option>
+													<option>Low</option>
+													<option>Normal</option>
+													<option>High</option>
+													<option>Very High</option> 
+													<option>Extra High</option>  
+												</select>
+												<hr align="left" class="light-line"/>
+												<p>
+													This reflects the level of volatility of the virtual machine underlying the software product to be developed.
+												</p>
+											</div>
+										</div>
 									</div>
-									<div class="form-group">
-										<label for="ptSelect"><a href="about.html#database">Main Storage Constraint</a></label>
-										<select class="form-control form-input-narrow" id="ptSelect">
-											<option>Very Low</option>
-											<option>Low</option>
-											<option>Normal</option>
-											<option>High</option>
-											<option>Very High</option> 
-											<option>Extra High</option>  
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="ptSelect"><a href="about.html#database">Virtual Machine Volatility</a></label>
-										<select class="form-control form-input-narrow" id="ptSelect">
-											<option>Very Low</option>
-											<option>Low</option>
-											<option>Normal</option>
-											<option>High</option>
-											<option>Very High</option> 
-											<option>Extra High</option>  
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="ptSelect"><a href="about.html#database">Computer Turnaround Time</a></label>
-										<select class="form-control form-input-narrow" id="ptSelect">
-											<option>Very Low</option>
-											<option>Low</option>
-											<option>Normal</option>
-											<option>High</option>
-											<option>Very High</option> 
-											<option>Extra High</option>  
-										</select>
+									<div class="row">
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<label for="ptSelect"><a href="about.html#database">Computer Turnaround Time</a></label>
+												<select class="form-control" id="ptSelect">
+													<option>Very Low</option>
+													<option>Low</option>
+													<option>Normal</option>
+													<option>High</option>
+													<option>Very High</option> 
+													<option>Extra High</option>  
+												</select>
+												<hr align="left" class="light-line"/>
+												<p>
+													This reflects the level of computer response time experienced by the project team developing the software product.
+												</p>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -242,60 +289,92 @@
 							</div>
 							<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 								<div class="panel-body">
-									<div class="form-group">
-										<label for="ptSelect"><a href="about.html#reliability">Analyst Capability</a></label>
-										<select class="form-control form-input-narrow" id="ptSelect">
-											<option>Very Low</option>
-											<option>Low</option>
-											<option>Normal</option>
-											<option>High</option>
-											<option>Very High</option> 
-											<option>Extra High</option>  
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="ptSelect"><a href="about.html#database">Applications Experience</a></label>
-										<select class="form-control form-input-narrow" id="ptSelect">
-											<option>Very Low</option>
-											<option>Low</option>
-											<option>Normal</option>
-											<option>High</option>
-											<option>Very High</option> 
-											<option>Extra High</option>  
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="ptSelect"><a href="about.html#database">Programmer Capability</a></label>
-										<select class="form-control form-input-narrow" id="ptSelect">
-											<option>Very Low</option>
-											<option>Low</option>
-											<option>Normal</option>
-											<option>High</option>
-											<option>Very High</option> 
-											<option>Extra High</option>  
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="ptSelect"><a href="about.html#database">Virtual Machine Experience</a></label>
-										<select class="form-control form-input-narrow" id="ptSelect">
-											<option>Very Low</option>
-											<option>Low</option>
-											<option>Normal</option>
-											<option>High</option>
-											<option>Very High</option> 
-											<option>Extra High</option>  
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="ptSelect"><a href="about.html#database">Programming Language Experience</a></label>
-										<select class="form-control form-input-narrow" id="ptSelect">
-											<option>Very Low</option>
-											<option>Low</option>
-											<option>Normal</option>
-											<option>High</option>
-											<option>Very High</option> 
-											<option>Extra High</option>  
-										</select>
+									<div class="row">
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<label for="ptSelect"><a href="about.html#reliability">Analyst Capability</a></label>
+												<select class="form-control" id="ptSelect">
+													<option>Very Low</option>
+													<option>Low</option>
+													<option>Normal</option>
+													<option>High</option>
+													<option>Very High</option> 
+													<option>Extra High</option>  
+												</select>
+												<hr align="left" class="light-line"/>
+												<p>
+													Analysts participate in the development and validation of requirements and preliminary design specifications.
+												</p>
+											</div>
+										</div>
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<label for="ptSelect"><a href="about.html#database">Applications Experience</a></label>
+												<select class="form-control" id="ptSelect">
+													<option>Very Low</option>
+													<option>Low</option>
+													<option>Normal</option>
+													<option>High</option>
+													<option>Very High</option> 
+													<option>Extra High</option>  
+												</select>
+												<hr align="left" class="light-line"/>
+												<p>
+													This represents the level of equivalent applications experience of the project team developing the software product.
+												</p>
+											</div>
+										</div>
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<label for="ptSelect"><a href="about.html#database">Programmer Capability</a></label>
+												<select class="form-control" id="ptSelect">
+													<option>Very Low</option>
+													<option>Low</option>
+													<option>Normal</option>
+													<option>High</option>
+													<option>Very High</option> 
+													<option>Extra High</option>  
+												</select>
+												<hr align="left" class="light-line"/>
+												<p>
+													This represents the capability of the programmers who will be working on the software product.
+												</p>
+											</div>
+										</div>
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<label for="ptSelect"><a href="about.html#database">Virtual Machine Experience</a></label>
+												<select class="form-control" id="ptSelect">
+													<option>Very Low</option>
+													<option>Low</option>
+													<option>Normal</option>
+													<option>High</option>
+													<option>Very High</option> 
+													<option>Extra High</option>  
+												</select>
+												<hr align="left" class="light-line"/>
+												<p>
+													This represents the experience the project team with the complex of hardware and software that the software product calls upon to accomplish its tasks.
+												</p>
+											</div>
+										</div>
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<label for="ptSelect"><a href="about.html#database">Programming Language Experience</a></label>
+												<select class="form-control" id="ptSelect">
+													<option>Very Low</option>
+													<option>Low</option>
+													<option>Normal</option>
+													<option>High</option>
+													<option>Very High</option> 
+													<option>Extra High</option>  
+												</select>
+												<hr align="left" class="light-line"/>
+												<p>
+													This represents the level of programming language experience of the project team developing the software project.
+												</p>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -312,38 +391,58 @@
 							</div>
 							<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 								<div class="panel-body">
-									<div class="form-group">
-										<label for="ptSelect"><a href="about.html#database">Modern Programming Practices</a></label>
-										<select class="form-control form-input-narrow" id="ptSelect">
-											<option>Very Low</option>
-											<option>Low</option>
-											<option>Normal</option>
-											<option>High</option>
-											<option>Very High</option> 
-											<option>Extra High</option>  
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="ptSelect"><a href="about.html#database">Use of Software Tools</a></label>
-										<select class="form-control form-input-narrow" id="ptSelect">
-											<option>Very Low</option>
-											<option>Low</option>
-											<option>Normal</option>
-											<option>High</option>
-											<option>Very High</option> 
-											<option>Extra High</option>  
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="ptSelect"><a href="about.html#database">Required Development Schedule</a></label>
-										<select class="form-control form-input-narrow" id="ptSelect">
-											<option>Very Low</option>
-											<option>Low</option>
-											<option>Normal</option>
-											<option>High</option>
-											<option>Very High</option> 
-											<option>Extra High</option>  
-										</select>
+									<div class="row">
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<label for="ptSelect"><a href="about.html#database">Modern Programming Practices</a></label>
+												<select class="form-control" id="ptSelect">
+													<option>Very Low</option>
+													<option>Low</option>
+													<option>Normal</option>
+													<option>High</option>
+													<option>Very High</option> 
+													<option>Extra High</option>  
+												</select>
+											</div>
+											<hr align="left" class="light-line"/>
+											<p>
+												This represents the degree to which modern programming practices are used in developing the software.
+											</p>
+										</div>
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<label for="ptSelect"><a href="about.html#database">Use of Software Tools</a></label>
+												<select class="form-control" id="ptSelect">
+													<option>Very Low</option>
+													<option>Low</option>
+													<option>Normal</option>
+													<option>High</option>
+													<option>Very High</option> 
+													<option>Extra High</option>  
+												</select>
+											</div>
+											<hr align="left" class="light-line"/>
+											<p>
+												This represents the degree to which software tools are used in developing the software product.
+											</p>
+										</div>
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<label for="ptSelect"><a href="about.html#database">Required Development Schedule</a></label>
+												<select class="form-control" id="ptSelect">
+													<option>Very Low</option>
+													<option>Low</option>
+													<option>Normal</option>
+													<option>High</option>
+													<option>Very High</option> 
+													<option>Extra High</option>  
+												</select>
+											</div>
+											<hr align="left" class="light-line"/>
+											<p>
+												This represents the level of constraint imposed on the project team developing a software product.
+											</p>
+										</div>
 									</div>
 								</div>
 							</div>
