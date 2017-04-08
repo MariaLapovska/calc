@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>Cost Constructive Calculator</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/custom.css"/>
+</head>
+<body id="about">
+
+	<!-- Menu -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="main.html">Cost Constructive Calculator</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="main.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="calculate.html"><i class="fa fa-calculator" aria-hidden="true"></i> Calculator</a></li>
+                    <li class="dropdown active">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-info-circle" aria-hidden="true"></i> About
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#cocomo">Constructive Cost Model</a></li>
+                            <li><a href="#basic">Basic COCOMO</a></li>
+                            <li><a href="#intermediate">Intermediate COCOMO</a></li>
+                            <li><a href="#detailed">Detailed COCOMO</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+	<!-- End menu -->
+
+	<div style="height: 50px" id="cocomo"></div>
+
+	<div class="container-fluid">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h3>About COCOMO</h3>
+					<hr align="left" class="light-line"/>
+					<p>
+						The <b>Constructive Cost Model</b> (COCOMO) is a procedural software cost estimation model developed by Barry W. Boehm. The model parameters are derived from fitting a regression formula using data from historical projects (61 projects for COCOMO 81 and 163 projects for COCOMO II).
+					</p>
+					<p>
+						The constructive cost model was developed by Barry W. Boehm in the late 1970s and published in Boehm's 1981 book Software Engineering Economics as a model for estimating effort, cost, and schedule for software projects. It drew on a study of 63 projects at TRW Aerospace where Boehm was Director of Software Research and Technology. The study examined projects ranging in size from 2,000 to 100,000 lines of code, and programming languages ranging from assembly to PL/I. These projects were based on the waterfall model of software development which was the prevalent software development process in 1981.
+					</p>
+					<p>
+						COCOMO consists of a hierarchy of <b>three increasingly detailed and accurate forms</b>. The first level, <b>Basic COCOMO</b> is good for quick, early, rough order of magnitude estimates of software costs, but its accuracy is limited due to its lack of factors to account for difference in project attributes (Cost Drivers). <b>Intermediate COCOMO</b> takes these Cost Drivers into account and <b>Detailed COCOMO</b> additionally accounts for the influence of individual project phases.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div style="height: 50px" id="basic"></div>
+
+	<div class="container-fluid">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h3>Basic COCOMO</h3>
+					<hr align="left" class="light-line"/>
+					<p>
+						<b>Basic COCOMO</b> computes software development effort (and cost) as a function of program size. Program size is expressed in estimated thousands of source lines of code (SLOC, KLOC).
+					</p>
+					<p>COCOMO applies to three classes of software projects:</p>
+					<ul>
+						<li><b>Organic projects</b> - "small" teams with "good" experience working with "less than rigid" requirements</li>
+						<li><b>Semi-detached projects</b> - "medium" teams with mixed experience working with a mix of rigid and less than rigid requirements</li>
+						<li><b>Embedded projects</b> - developed within a set of "tight" constraints. It is also combination of organic and semi-detached projects (hardware, software, operational, etc.)</li>
+					</ul>
+					<p>The basic COCOMO equations take the form:</p>
+					<div class="bs-callout" style="line-height: 1.8;">
+						<b>Effort Applied (E)</b> = a<sub>b</sub>(KLOC)<sup>b<sub>b</sub></sup> [ man-months ]<br/>
+						<b>Development Time (D)</b> = c<sub>b</sub>(Effort Applied)<sup>d<sub>b</sub></sup> [months]<br/>
+						<b>People required (P)</b> = Effort Applied / Development Time [count]<br/>
+					</div>
+					<p>
+						where, KLOC is the estimated number of delivered lines (expressed in thousands ) of code for project. The coefficients a<sub>b</sub>, b<sub>b</sub>, c<sub>b</sub> and d<sub>b</sub> are given in the following table (note: the values listed below are from the original analysis, with a modern reanalysis producing different values):	
+					</p>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Software project</th>
+								<th>a<sub>b</sub></th>
+								<th>b<sub>b</sub></th>
+								<th>c<sub>b</sub></th>
+								<th>d<sub>b</sub></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Organic</td>
+								<td>2.4</td>
+								<td>1.05</td>
+								<td>2.5</td>
+								<td>0.38</td>
+							</tr>
+							<tr>
+								<td>Semi-detached</td>
+								<td>3.0</td>
+								<td>1.12</td>
+								<td>2.5</td>
+								<td>0.35</td>
+							</tr>
+							<tr>
+								<td>Embedded</td>
+								<td>3.6</td>
+								<td>1.20</td>
+								<td>2.5</td>
+								<td>0.32</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+					Basic COCOMO is good for <b>quick estimate of software costs</b>. However it does not account for differences in hardware constraints, personnel quality and experience, use of modern tools and techniques, and so on.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div style="height: 50px" id="intermediate"></div>
+
+	<div class="container-fluid">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h3>Intermediate COCOMO</h3>
+					<hr align="left" class="light-line"/>
+					<p>
+						<b>Intermediate COCOMO</b> computes software development effort as function of program size and a set of "cost drivers" that include subjective assessment of product, hardware, personnel and project attributes. This extension considers a set of four "cost drivers", each with a number of subsidiary attributes.
+					</p>
+					<p>
+						Each of the 15 attributes receives a rating on a six-point scale that ranges from "very low" to "extra high" (in importance or value). An effort multiplier from the table below applies to the rating. The product of all effort multipliers results in an effort adjustment factor (EAF). Typical values for EAF range from 0.9 to 1.4.
+					</p>
+					<table class="table">
+						<thead>
+							<tr>
+								<th rowspan="2">Cost Drivers</th>
+								<th colspan="6" style="text-align: center;">Ratings</th>
+							</tr>
+							<tr>
+								<th>Very Low</th>
+								<th>Low</th>
+								<th>Nominal</th>
+								<th>High</th>
+								<th>Very High</th>
+								<th>Extra High</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th colspan="7">Product attributes</th>
+							</tr>
+							<tr>
+								<td>Required reliability <a data-placement="right" data-toggle="tooltip" title="Reflects the extent that a software product can be expected to perform its intended functions satisfactorily"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+								<td>0.75</td>
+								<td>0.88</td>
+								<td>1.00</td>
+								<td>1.15</td>
+								<td>1.40</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Database size <a data-placement="right" data-toggle="tooltip" title="Relative database size to be developed where size refers to the amount of data to be assembled and stored in non-main storage"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+								<td></td>
+								<td>0.94</td>
+								<td>1.00</td>
+								<td>1.08</td>
+								<td>1.16</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Product complexity <a data-placement="right" data-toggle="tooltip" title="Complexity is assessed as the subjective average of four types of control functions: control, computation, device-dependent, or data management operations"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+								<td>0.70</td>
+								<td>0.85</td>
+								<td>1.00</td>
+								<td>1.15</td>
+								<td>1.30</td>
+								<td>1.65</td>
+							</tr>
+							<tr>
+								<th colspan="7">Hardware attributes</th>
+							</tr>
+							<tr>
+								<td>Execution time constraint <a data-placement="right" data-toggle="tooltip" title="Reflects the degree of execution time constraint imposed upon a software product"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+								<td></td>
+								<td></td>
+								<td>1.00</td>
+								<td>1.11</td>
+								<td>1.30</td>
+								<td>1.66</td>
+							</tr>
+							<tr>
+								<td>Main Storage constraint <a data-placement="right" data-toggle="tooltip" title="Reflects the percentage of main storage expected to be used by the software product and any subsystems consuming the main storage resources"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+								<td></td>
+								<td></td>
+								<td>1.00</td>
+								<td>1.06</td>
+								<td>1.21</td>
+								<td>1.56</td>
+							</tr>
+							<tr>
+								<td>Virtual machine volatility <a data-placement="right" data-toggle="tooltip" title="Reflects the level of volatility of the virtual machine underlying the software product to be developed"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+								<td></td>
+								<td>0.87</td>
+								<td>1.00</td>
+								<td>1.15</td>
+								<td>1.30</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Computer turnaround time <a data-placement="right" data-toggle="tooltip" title="Reflects the level of computer response time experienced by the project team developing the software product"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+								<td></td>
+								<td>0.87</td>
+								<td>1.00</td>
+								<td>1.07</td>
+								<td>1.15</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th colspan="7">Personnel attributes</th>
+							</tr>
+							<tr>
+								<td>Analyst capability <a data-placement="right" data-toggle="tooltip" title="Analysts participate in the development and validation of requirements and preliminary design specifications"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+								<td>1.46</td>
+								<td>1.19</td>
+								<td>1.00</td>
+								<td>0.86</td>
+								<td>0.71</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Applications experience <a data-placement="right" data-toggle="tooltip" title="Represents the level of equivalent applications experience of the project team developing the software product"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+								<td>1.29</td>
+								<td>1.13</td>
+								<td>1.00</td>
+								<td>0.91</td>
+								<td>0.82</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Programmer capability <a data-placement="right" data-toggle="tooltip" title="Represents the capability of the programmers who will be working on the software product"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+								<td>1.42</td>
+								<td>1.17</td>
+								<td>1.00</td>
+								<td>0.86</td>
+								<td>0.70</td>
+								<td ></td>
+							</tr>
+							<tr>
+								<td>Virtual machine experience <a data-placement="right" data-toggle="tooltip" title="Represents the experience the project team with the complex of hardware and software that the software product calls upon to accomplish its tasks"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+								<td>1.21</td>
+								<td>1.10</td>
+								<td>1.00</td>
+								<td>0.90</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Programming language experience <a data-placement="right" data-toggle="tooltip" title="Represents the level of programming language experience of the project team developing the software project"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+								<td>1.14</td>
+								<td>1.07</td>
+								<td>1.00</td>
+								<td>0.95</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th colspan="7">Project attributes</th>
+							</tr>
+							<tr>
+								<td>Modern Programming Practices <a data-placement="right" data-toggle="tooltip" title="Represents the degree to which modern programming practices are used in developing the software"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+								<td>1.24</td>
+								<td>1.10</td>
+								<td>1.00</td>
+								<td>0.91</td>
+								<td>0.82</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Use of software tools <a data-placement="right" data-toggle="tooltip" title="Represents the degree to which software tools are used in developing the software product"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+								<td>1.24</td>
+								<td>1.10</td>
+								<td>1.00</td>
+								<td>0.91</td>
+								<td>0.83</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Required development schedule <a data-placement="right" data-toggle="tooltip" title="Represents the level of constraint imposed on the project team developing a software product"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+								<td>1.23</td>
+								<td>1.08</td>
+								<td>1.00</td>
+								<td>1.04</td>
+								<td>1.10</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+					<p>The Intermediate Cocomo formula now takes the form:</p>
+					<div class="bs-callout"><b>E</b> = a<sub>i</sub>(KLoC)<sup>(b<sub>i</sub>)</sup>(EAF)</div>
+					<p>
+					where E is the effort applied in person-months, KLoC is the estimated number of thousands of delivered lines of code for the project, and EAF is the factor calculated above. The coefficient ai and the exponent bi are given in the next table.
+					</p>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Software project</th>
+								<th>a<sub>i</sub></th>
+								<th>b<sub>i</sub></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Organic</td>
+								<td>3.2</td>
+								<td>1.05</td>
+							</tr>
+							<tr>
+								<td>Semi-detached</td>
+								<td>3.0</td>
+								<td>1.12</td>
+							</tr>
+							<tr>
+								<td>Embedded</td>
+								<td>2.8</td>
+								<td>1.20</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>The Development time D calculation uses E in the same way as in the Basic COCOMO.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div style="height: 50px" id="detailed"></div>
+
+	<div class="container-fluid" style="padding-bottom: 50px">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h3>Detailed COCOMO</h3>
+					<hr align="left" class="light-line"/>
+					<p>
+					<b>Detailed COCOMO</b> incorporates all characteristics of the intermediate version with an assessment of the cost driver's impact on each step (analysis, design, etc.) of the software engineering process.
+					</p>
+					<p>
+					The detailed model uses different effort multipliers for each cost driver attribute. These Phase Sensitive effort multipliers are each to determine the amount of effort required to complete each phase. In detailed cocomo,the whole software is divided in different modules and then we apply COCOMO in different modules to estimate effort and then sum the effort.
+					</p>
+					<p>
+					In detailed COCOMO, the effort is calculated as function of program size and a set of cost drivers given according to each phase of software life cycle. A Detailed project schedule is never static.
+					</p>
+					<p>The six phases of detailed COCOMO are:</p>
+					<ul>
+						<li>Plan and requirement</li>
+						<li>System design</li>
+						<li>Detailed design</li>
+						<li>Module code and test</li>
+						<li>Integration and test</li>
+						<li>Cost Constructive model</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; Cost Constructive Calculator 2017.</p>
+      </div>
+    </footer>
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+		    $('[data-toggle="tooltip"]').tooltip(); 
+		});
+	</script>
+</body>
+</html>
