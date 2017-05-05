@@ -2,9 +2,10 @@
 <html>
 <head lang="en">
 	<meta charset="UTF-8">
-	<title>Cost Constructive Calculator</title>
+	<title>Valuation system</title>
 	<link rel="stylesheet" href="css/font-awesome.min.css"/>
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/c3.min.css"/>
 	<link rel="stylesheet" href="css/custom.css"/>
 </head>
 <body>
@@ -20,7 +21,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="main.html">Cost Constructive Calculator</a>
+				<a class="navbar-brand" href="main.html">Valuation system for project budget</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
@@ -45,24 +46,26 @@
 	</nav>
 	<!-- End menu -->
 
+	<div id="calculation">
+
 	<div class="container-fluid">
 		<div class="container">
 			<div class="page-header">
-				<h1>Cost Constructive Calculator</h1>
+				<h1>Valuation system for project budget</h1>
 			</div>
 		</div>
 	</div>
 
-	<div class="container-fluid">
+	<div class="container-fluid" id="one">
 		<div class="container">
-			<div class="row no-top">
+			<div class="row big-row">
 				<div class="col-lg-12">
 					<h2>Step 1. <small>Software Product Size</small></h2>
 					<hr align="left" class="light-line"/>
 					<p>
-						The model uses a product size expressed in <b>source lines of code</b> (SLOC). The bigger the size the larger the effort and the longer the schedule.
+						The model uses a product size expressed in <b>thousands of lines of code</b> (KLOC). The bigger the size the larger the effort and the longer the schedule.
 					</p>
-					<p><b>SLOC</b> is defined such that:</p>
+					<p><b>SLOC (source line of code)</b> is defined such that:</p>
 					<ul>
 						<li>Only Source lines that are delivered as part of the product are included - test drivers and other support software is excluded</li>
 						<li>Source lines are created by the project staff - code created by applications generators is excluded</li>
@@ -70,11 +73,20 @@
 						<li>Declarations are counted as SLOC</li>
 						<li>Comments are not counted as SLOC</li>
 					</ul>
-					<div class="form-group">
-						<label for="psInput">Please, enter the product size in SLOC:</label>
-						<input type="number" class="form-control form-input-narrow" id="psInput" placeholder="Enter the product size in SLOC" min="1" max="1000000000" title="from 1 to 1000000000">
+					<div id="klocInputForm" class="form-group">
+						<div class="col-lg-12">
+							<label for="klocInput">Please, enter the product size in KLOC (thousands of lines of code):</label>
+						</div>
+						<div class="col-lg-3" style="margin-bottom: 15px;">
+							<input type="number" class="form-control form-input-narrow" id="klocInput" placeholder="Enter the product size in KLOC" min="1" max="1000000" title="from 1 to 1000000" required>
+						</div>
+						<div class="col-lg-9" style="padding-left: 0px; margin-bottom: 15px;">
+							<span id="klocInputMsg" class="help-block" style="vertical-align: middle;"></span>
+						</div>
 					</div>
-					<button type="button" class="btn btn-primary" id="toTwo">Next Step</button>
+					<div class="col-lg-12">
+						<button type="button" class="btn btn-primary" id="toTwo">Next Step</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -82,7 +94,7 @@
 
 	<div class="container-fluid" style="background-color: #f5f5f5;" id="two">
 		<div class="container">
-			<div class="row">
+			<div class="row big-row">
 				<div class="col-lg-12">
 					<h2>Step 2. <small>Software Development Mode</small></h2>
 					<hr align="left" class="dark-line"/>
@@ -95,11 +107,11 @@
 						<li>Choose <b>Embedded</b> if the project must operate within a strongly coupled complex of hardware, software, regulations, and operational procedures, such as real-time systems.</li>
 					</ul>
 					<div class="form-group">
-						<label for="ptSelect">Please, choose one:</label>
-						<select class="form-control form-input-narrow" id="ptSelect">
-							<option>Organic</option>
-							<option>Semi-Detached</option>
-							<option>Embedded</option>
+						<label for="modeSelect">Please, choose one:</label>
+						<select class="form-control form-input-narrow" id="modeSelect">
+							<option value="0" selected>Organic</option>
+							<option value="1">Semi-Detached</option>
+							<option value="2">Embedded</option>
 						</select>
 					</div>
 					<button type="button" class="btn btn-primary" id="toThree">Next Step</button>
@@ -110,7 +122,7 @@
 
 	<div class="container-fluid" id="three">
 		<div class="container">
-			<div class="row">
+			<div class="row big-row">
 				<div class="col-lg-12">
 					<h2>Step 3. <small>Software Development Cost Drivers</small></h2>
 					<hr align="left" class="light-line"/>
@@ -122,12 +134,16 @@
 						This step is optional. If you want to use basic COCOMO - skip this and press <b>Calculate</b> button. If you want to use intermediate COCOMO - <b>fill all the fields below</b> before pressing Calculate button.
 					</div>
 
-					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+					<div class="checkbox">
+					 	<label><input id="turnOn" type="checkbox">Use intermediate COCOMO</label>
+					</div>
+
+					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="display: none">
 						<div class="panel panel-default">
 							<div class="panel-heading white" role="tab" id="headingOne">
 								<h4 class="panel-title">
 									<i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;
-									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									<a id="one" class="collapsed collapsible" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 									Product Attributes
 									</a>
 								</h4>
@@ -137,14 +153,13 @@
 									<div class="row">
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<label for="ptSelect"><a href="about.html#reliability">Required Reliability</a></label>
-												<select class="form-control" id="ptSelect">
-													<option>Very Low</option>
-													<option>Low</option>
-													<option>Normal</option>
-													<option>High</option>
-													<option>Very High</option> 
-													<option>Extra High</option>  
+												<label>Required Reliability</label>
+												<select class="form-control driversSelect">
+													<option value="0.75" selected>Very Low</option>
+													<option value="0.88">Low</option>
+													<option value="1">Normal</option>
+													<option value="1.15">High</option>
+													<option value="1.40">Very High</option>
 												</select>
 											</div>
 											<hr align="left" class="light-line"/>
@@ -154,14 +169,12 @@
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<label for="ptSelect"><a href="about.html#database">Database Size</a></label>
-												<select class="form-control" id="ptSelect">
-													<option>Very Low</option>
-													<option>Low</option>
-													<option>Normal</option>
-													<option>High</option>
-													<option>Very High</option> 
-													<option>Extra High</option>  
+												<label>Database Size</label>
+												<select class="form-control driversSelect">
+													<option value="0.94" selected>Low</option>
+													<option value="1.00">Normal</option>
+													<option value="1.08">High</option>
+													<option value="1.16">Very High</option>
 												</select>
 											</div>
 											<hr align="left" class="light-line"/>
@@ -171,14 +184,14 @@
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<label for="ptSelect"><a href="about.html#database">Product Complexity</a></label>
-												<select class="form-control" id="ptSelect">
-													<option>Very Low</option>
-													<option>Low</option>
-													<option>Normal</option>
-													<option>High</option>
-													<option>Very High</option> 
-													<option>Extra High</option>  
+												<label>Product Complexity</label>
+												<select class="form-control driversSelect" >
+													<option value="0.70" selected>Very Low</option>
+													<option value="0.85">Low</option>
+													<option value="1">Normal</option>
+													<option value="1.15">High</option>
+													<option value="1.30">Very High</option> 
+													<option value="1.65">Extra High</option>  
 												</select>
 											</div>
 											<hr align="left" class="light-line"/>
@@ -195,8 +208,8 @@
 							<div class="panel-heading white" role="tab" id="headingTwo">
 								<h4 class="panel-title">
 									<i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;
-									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-									Computer Attributes
+									<a id="two" class="collapsed collapsible" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									Hardware Attributes
 									</a>
 								</h4>
 							</div>
@@ -205,73 +218,65 @@
 									<div class="row">
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<label for="ptSelect"><a href="about.html#reliability">Execution Time Constraint</a></label>
-												<select class="form-control" id="ptSelect">
-													<option>Very Low</option>
-													<option>Low</option>
-													<option>Normal</option>
-													<option>High</option>
-													<option>Very High</option> 
-													<option>Extra High</option>  
+												<label>Execution Time Constraint</label>
+												<select class="form-control driversSelect" >
+													<option value="1" selected>Normal</option>
+													<option value="1.11">High</option>
+													<option value="1.30">Very High</option> 
+													<option value="1.66">Extra High</option>  
 												</select>
-												<hr align="left" class="light-line"/>
-												<p>
-													This reflects the degree of execution time constraint imposed upon a software product.
-												</p>
 											</div>
+											<hr align="left" class="light-line"/>
+											<p>
+												This reflects the degree of execution time constraint imposed upon a software product.
+											</p>
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<label for="ptSelect"><a href="about.html#database">Main Storage Constraint</a></label>
-												<select class="form-control" id="ptSelect">
-													<option>Very Low</option>
-													<option>Low</option>
-													<option>Normal</option>
-													<option>High</option>
-													<option>Very High</option> 
-													<option>Extra High</option>  
+												<label>Main Storage Constraint</label>
+												<select class="form-control driversSelect" >
+													<option value="1" selected>Normal</option>
+													<option value="1.06">High</option>
+													<option value="1.21">Very High</option> 
+													<option value="1.56">Extra High</option>  
 												</select>
-												<hr align="left" class="light-line"/>
-												<p>
-													This reflects the percentage of main storage expected to be used by the software product and any subsystems consuming the main storage resources.
-												</p>
 											</div>
+											<hr align="left" class="light-line"/>
+											<p>
+												This reflects the percentage of main storage expected to be used by the software product and any subsystems consuming the main storage resources.
+											</p>
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<label for="ptSelect"><a href="about.html#database">Virtual Machine Volatility</a></label>
-												<select class="form-control" id="ptSelect">
-													<option>Very Low</option>
-													<option>Low</option>
-													<option>Normal</option>
-													<option>High</option>
-													<option>Very High</option> 
-													<option>Extra High</option>  
+												<label>Virtual Machine Volatility</label>
+												<select class="form-control driversSelect" >
+													<option value="0.87" selected>Low</option>
+													<option value="1">Normal</option>
+													<option value="1.15">High</option>
+													<option value="1.30">Very High</option>
 												</select>
-												<hr align="left" class="light-line"/>
-												<p>
-													This reflects the level of volatility of the virtual machine underlying the software product to be developed.
-												</p>
 											</div>
+											<hr align="left" class="light-line"/>
+											<p>
+												This reflects the level of volatility of the virtual machine underlying the software product to be developed.
+											</p>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<label for="ptSelect"><a href="about.html#database">Computer Turnaround Time</a></label>
-												<select class="form-control" id="ptSelect">
-													<option>Very Low</option>
-													<option>Low</option>
-													<option>Normal</option>
-													<option>High</option>
-													<option>Very High</option> 
-													<option>Extra High</option>  
+												<label>Computer Turnaround Time</label>
+												<select class="form-control driversSelect" >
+													<option value="0.87" selected>Low</option>
+													<option value="1">Normal</option>
+													<option value="1.07">High</option>
+													<option value="1.15">Very High</option>
 												</select>
-												<hr align="left" class="light-line"/>
-												<p>
-													This reflects the level of computer response time experienced by the project team developing the software product.
-												</p>
 											</div>
+											<hr align="left" class="light-line"/>
+											<p>
+												This reflects the level of computer response time experienced by the project team developing the software product.
+											</p>
 										</div>
 									</div>
 								</div>
@@ -282,7 +287,7 @@
 							<div class="panel-heading white" role="tab" id="headingThree">
 								<h4 class="panel-title">
 									<i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;
-									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									<a id="three" class="collapsed collapsible" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 										Personnel Attributes
 									</a>
 								</h4>
@@ -292,88 +297,83 @@
 									<div class="row">
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<label for="ptSelect"><a href="about.html#reliability">Analyst Capability</a></label>
-												<select class="form-control" id="ptSelect">
-													<option>Very Low</option>
-													<option>Low</option>
-													<option>Normal</option>
-													<option>High</option>
-													<option>Very High</option> 
-													<option>Extra High</option>  
+												<label>Analyst Capability</label>
+												<select class="form-control driversSelect" >
+													<option value="1.46" selected>Very Low</option>
+													<option value="1.19">Low</option>
+													<option value="1">Normal</option>
+													<option value="0.86">High</option>
+													<option value="0.71">Very High</option>
 												</select>
-												<hr align="left" class="light-line"/>
-												<p>
-													Analysts participate in the development and validation of requirements and preliminary design specifications.
-												</p>
 											</div>
+											<hr align="left" class="light-line"/>
+											<p>
+												Analysts participate in the development and validation of requirements and preliminary design specifications.
+											</p>
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<label for="ptSelect"><a href="about.html#database">Applications Experience</a></label>
-												<select class="form-control" id="ptSelect">
-													<option>Very Low</option>
-													<option>Low</option>
-													<option>Normal</option>
-													<option>High</option>
-													<option>Very High</option> 
-													<option>Extra High</option>  
+												<label>Applications Experience</label>
+												<select class="form-control driversSelect" >
+													<option value="1.29" selected>Very Low</option>
+													<option value="1.13">Low</option>
+													<option value="1">Normal</option>
+													<option value="0.91">High</option>
+													<option value="0.82">Very High</option>
 												</select>
-												<hr align="left" class="light-line"/>
-												<p>
-													This represents the level of equivalent applications experience of the project team developing the software product.
-												</p>
 											</div>
+											<hr align="left" class="light-line"/>
+											<p>
+												This represents the level of equivalent applications experience of the project team developing the software product.
+											</p>
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<label for="ptSelect"><a href="about.html#database">Programmer Capability</a></label>
-												<select class="form-control" id="ptSelect">
-													<option>Very Low</option>
-													<option>Low</option>
-													<option>Normal</option>
-													<option>High</option>
-													<option>Very High</option> 
-													<option>Extra High</option>  
+												<label>Programmer Capability</label>
+												<select class="form-control driversSelect" >
+													<option value="1.42" selected>Very Low</option>
+													<option value="1.17">Low</option>
+													<option value="1">Normal</option>
+													<option value="0.86">High</option>
+													<option value="0.70">Very High</option>
 												</select>
-												<hr align="left" class="light-line"/>
-												<p>
-													This represents the capability of the programmers who will be working on the software product.
-												</p>
 											</div>
+											<hr align="left" class="light-line"/>
+											<p>
+												This represents the capability of the programmers who will be working on the software product.
+											</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<div class="form-group">
+												<label>Virtual Machine Experience</label>
+												<select class="form-control driversSelect" >
+													<option value="1.21" selected>Very Low</option>
+													<option value="1.10">Low</option>
+													<option value="1">Normal</option>
+													<option value="0.9">High</option>
+												</select>
+											</div>
+											<hr align="left" class="light-line"/>
+											<p>
+												This represents the experience the project team with the complex of hardware and software that the software product calls upon to accomplish its tasks.
+											</p>
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<label for="ptSelect"><a href="about.html#database">Virtual Machine Experience</a></label>
-												<select class="form-control" id="ptSelect">
-													<option>Very Low</option>
-													<option>Low</option>
-													<option>Normal</option>
-													<option>High</option>
-													<option>Very High</option> 
-													<option>Extra High</option>  
+												<label>Programming Language Experience</label>
+												<select class="form-control driversSelect" >
+													<option value="1.14" selected>Very Low</option>
+													<option value="1.07">Low</option>
+													<option value="1">Normal</option>
+													<option value="0.95">High</option>
 												</select>
-												<hr align="left" class="light-line"/>
-												<p>
-													This represents the experience the project team with the complex of hardware and software that the software product calls upon to accomplish its tasks.
-												</p>
 											</div>
-										</div>
-										<div class="col-md-4 col-sm-6 col-xs-12">
-											<div class="form-group">
-												<label for="ptSelect"><a href="about.html#database">Programming Language Experience</a></label>
-												<select class="form-control" id="ptSelect">
-													<option>Very Low</option>
-													<option>Low</option>
-													<option>Normal</option>
-													<option>High</option>
-													<option>Very High</option> 
-													<option>Extra High</option>  
-												</select>
-												<hr align="left" class="light-line"/>
-												<p>
-													This represents the level of programming language experience of the project team developing the software project.
-												</p>
-											</div>
+											<hr align="left" class="light-line"/>
+											<p>
+												This represents the level of programming language experience of the project team developing the software project.
+											</p>
 										</div>
 									</div>
 								</div>
@@ -384,7 +384,7 @@
 							<div class="panel-heading white" role="tab" id="headingFour">
 								<h4 class="panel-title">
 									<i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;
-									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+									<a id="four" class="collapsed collapsible" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 										Project Attributes
 									</a>
 								</h4>
@@ -394,14 +394,13 @@
 									<div class="row">
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<label for="ptSelect"><a href="about.html#database">Modern Programming Practices</a></label>
-												<select class="form-control" id="ptSelect">
-													<option>Very Low</option>
-													<option>Low</option>
-													<option>Normal</option>
-													<option>High</option>
-													<option>Very High</option> 
-													<option>Extra High</option>  
+												<label>Modern Programming Practices</label>
+												<select class="form-control driversSelect" >
+													<option value="1.24" selected>Very Low</option>
+													<option value="1.10">Low</option>
+													<option value="1">Normal</option>
+													<option value="0.91">High</option>
+													<option value="0.82">Very High</option>
 												</select>
 											</div>
 											<hr align="left" class="light-line"/>
@@ -411,14 +410,13 @@
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<label for="ptSelect"><a href="about.html#database">Use of Software Tools</a></label>
-												<select class="form-control" id="ptSelect">
-													<option>Very Low</option>
-													<option>Low</option>
-													<option>Normal</option>
-													<option>High</option>
-													<option>Very High</option> 
-													<option>Extra High</option>  
+												<label>Use of Software Tools</label>
+												<select class="form-control driversSelect" >
+													<option value="1.24" selected>Very Low</option>
+													<option value="1.10">Low</option>
+													<option value="1">Normal</option>
+													<option value="0.91">High</option>
+													<option value="0.83">Very High</option>
 												</select>
 											</div>
 											<hr align="left" class="light-line"/>
@@ -428,14 +426,13 @@
 										</div>
 										<div class="col-md-4 col-sm-6 col-xs-12">
 											<div class="form-group">
-												<label for="ptSelect"><a href="about.html#database">Required Development Schedule</a></label>
-												<select class="form-control" id="ptSelect">
-													<option>Very Low</option>
-													<option>Low</option>
-													<option>Normal</option>
-													<option>High</option>
-													<option>Very High</option> 
-													<option>Extra High</option>  
+												<label>Required Development Schedule</label>
+												<select class="form-control driversSelect" >
+													<option value="1.23" selected>Very Low</option>
+													<option value="1.08">Low</option>
+													<option value="1">Normal</option>
+													<option value="1.04">High</option>
+													<option value="1.10">Very High</option>
 												</select>
 											</div>
 											<hr align="left" class="light-line"/>
@@ -454,25 +451,60 @@
 		</div>
 	</div>
 
+	</div>
+
+	<div id="result" style="display: none">
+		<div class="container-fluid">
+			<div class="container">
+				<div class="row big-row">
+					<div class="col-lg-12">
+						<h2>Result</h2>
+						<hr align="left" class="light-line"/>
+						<h4>COCOMO Level:</h4>
+						<p id="level">
+						</p>
+						<h4>Duration: <small>[months]</small></h4> 
+						<p id="duration">
+						</p>
+						<h4>Staff: <small>[people required]</small></h4> 
+						<p id="staff">
+						</p>
+					</div>
+				</div>
+				<div class="row big-row">
+					<div class="col-lg-12">
+						<h2>Charts</h2>
+						<hr align="left" class="light-line"/>
+					</div>
+					<div class="col-lg-12 text-center">
+						<h4>Cost distribution <small>[according to software cost drivers]</small></h4>
+						<div id="pieChart"></div>
+					</div>
+					<div class="col-lg-12 text-center" style="margin-top:20px;">
+						<h4>Project duration <small>[depending on staff size]</small></h4>
+						<div id="lineChart"></div>
+						<p>This chart shows how the project duration will be affected if the staff size will be twice less than needed or twice bigger</p>
+					</div>
+					<div class="col-lg-12 text-center" style="margin-top:20px;">
+						<h4>Project complexity <small>[according to KLOC]</small></h4>
+						<div id="gaugeChart"></div>
+					</div>
+					<button type="button" class="btn btn-primary" id="back">Back</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<footer class="footer">
 	  <div class="container">
-		<p>&copy; Cost Constructive Calculator 2017.</p>
+		<p>&copy; Valuation system for project budget 2017.</p>
 	  </div>
 	</footer>
 
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-		$("#toTwo").click(function() {
-		    $('html, body').animate({
-		        scrollTop: $("#two").offset().top
-		    }, 1000);
-		});
-		$("#toThree").click(function() {
-		    $('html, body').animate({
-		        scrollTop: $("#three").offset().top
-		    }, 1000);
-		});
-	</script>
+	<script type="text/javascript" src="js/d3.min.js"></script>
+	<script type="text/javascript" src="js/c3.min.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
 	<meta charset="UTF-8">
-	<title>Cost Constructive Calculator</title>
+	<title>Valuation system</title>
     <link rel="stylesheet" href="css/font-awesome.min.css"/>
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="css/custom.css"/>
@@ -20,12 +20,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="main.html">Cost Constructive Calculator</a>
+                <a class="navbar-brand" href="main.html">Valuation system for project budget</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#home"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
                     <li><a href="calculate.html"><i class="fa fa-calculator" aria-hidden="true"></i> Calculator</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-info-circle" aria-hidden="true"></i> About
@@ -46,9 +46,9 @@
 	<!-- End menu -->
 
 	<!-- Banner -->
-	<div class="jumbotron" id="home">
+	<div class="jumbotron">
 		<div class="container text-center">
-			<h1>Cost Constructive Calculator</h1>       
+			<h1>Valuation system for project budget</h1>       
 			<p>Software cost estimation has never been easier!</p>
             <hr/>
             <a href="calculate.html" class="btn btn-default btn-lg" role="button">Calculate</a>
@@ -58,7 +58,7 @@
 
     <div class="container-fluid">
         <div class="container">
-        	<div class="row">
+        	<div class="row big-row">
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">
@@ -121,7 +121,7 @@
 
     <div class="container-fluid" style="background-color: #f5f5f5;">
         <div class="container">
-            <div class="row">
+            <div class="row big-row">
                 <div class="col-md-6">
                     <img class="img-responsive" src="images/calculator.jpg" alt="Cost Constructive Calculator">
                 </div>
@@ -137,16 +137,16 @@
 
     <div class="container-fluid">
     <div class="container">
-        <div class="row">
+        <div class="row big-row">
             <div class="col-md-6">
                 <h3>Basic COCOMO</h3>
                 <hr align="left" class="light-line"/>
                 <p><b>Basic COCOMO</b> computes software development effort (and cost) as a function of program size. Program size is expressed in estimated thousands of source lines of code (SLOC, KLOC).</p>
                 <p>COCOMO applies to three classes of software projects:</p>
                 <ul>
-                    <li>Organic projects - "small" teams with "good" experience working with "less than rigid" requirements</li>
-                    <li>Semi-detached projects - "medium" teams with mixed experience working with a mix of rigid and less than rigid requirements</li>
-                    <li>Embedded projects - developed within a set of "tight" constraints. It is also combination of organic and semi-detached projects (hardware, software, operational, etc.)</li>
+                    <li>Organic projects</li>
+                    <li>Semi-detached projects</li>
+                    <li>Embedded projects</li>
                 </ul>
                 <a class="btn btn-primary" href="about.html#basic">Read More</a>
             </div>
@@ -159,7 +159,7 @@
 
     <div class="container-fluid" style="background-color: #f5f5f5;">
         <div class="container">
-            <div class="row">
+            <div class="row big-row">
                 <div class="col-md-6">
                     <img class="img-responsive" src="images/calculator2.jpg" alt="Cost Constructive Calculator">
                 </div>
@@ -167,7 +167,7 @@
                     <h3>Intermediate COCOMO</h3>
                     <hr align="left" class="dark-line"/>
                     <p><b>Intermediate COCOMO</b> computes software development effort as function of program size and a set of "cost drivers" that include subjective assessment of product, hardware, personnel and project attributes. This extension considers a set of four "cost drivers", each with a number of subsidiary attributes.</p>
-                    <p>Each of the 15 attributes receives a rating on a six-point scale that ranges from "very low" to "extra high" (in importance or value). An effort multiplier from the table below applies to the rating. The product of all effort multipliers results in an effort adjustment factor (EAF).</p>
+                    <p>Each of the 15 attributes receives a rating on a six-point scale that ranges from "very low" to "extra high" (in importance or value).</p>
                     <a class="btn btn-primary" href="about.html#intermediate">Read More</a>
                 </div>
             </div>
@@ -176,7 +176,7 @@
 
     <div class="container-fluid">
     <div class="container">
-        <div class="row">
+        <div class="row big-row">
             <div class="col-md-6">
                 <h3>Detailed COCOMO</h3>
                 <hr align="left" class="light-line"/>
@@ -193,7 +193,7 @@
 
     <footer class="footer">
       <div class="container">
-        <p>&copy; Cost Constructive Calculator 2017.</p>
+        <p>&copy; Valuation system for project budget 2017.</p>
       </div>
     </footer>
 
