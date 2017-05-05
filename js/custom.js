@@ -42,7 +42,7 @@ $("#toTwo").click(function() {
 	if (!checkKlocInput()) {
 		$('html, body').animate({
 	        scrollTop: $("#two").offset().top - 50
-	    }, 1000);
+	    }, 1000); 
 	}
 });
 
@@ -94,6 +94,7 @@ $("#calculate").click(function() {
 	        1: { a: 3.0, b: 1.12, c: 2.5, d: 0.35, ai: 3.0, bi: 1.12 },
 	        2: { a: 3.6, b: 1.20, c: 2.5, d: 0.32, ai: 2.8, bi: 1.20 }
 	    };
+
 	    var ratingNames = ["NA", "Very Low", "Low", "Normal", "High", "Very High", "Extra High"];
 	    var mode = $("#modeSelect").val();
 	    var coef = allCoefs[mode];
@@ -270,7 +271,6 @@ $("#calculate").click(function() {
 		$("#staff").empty();
 		$("#duration").append(duration.toFixed(2));
 		$("#staff").append(staff.toFixed(2));
-
 	    $("#result").show();
 	}
 });
